@@ -1,3 +1,1 @@
-# React Chess
-
-A simple chess app made with React.js
+Loads an FEN based on URL

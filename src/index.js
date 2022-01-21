@@ -5,6 +5,15 @@ import { Board, initialSqClasses, initialBoard, stalemateBoard } from './board.j
 import { flipBoard, convertToStandard, convertToFen, convertFromFEN } from './notation.js';
 import { Knight, Bishop, Rook, Queen } from './piece.js';
 
+const url = window.location.href; 
+console.log(url);
+const fenPos = url.substring(url.indexOf("?")+1);
+console.log(fenPos);
+
+console.log(convertFromFEN(fenPos));
+
+const startingBoard = fenPos === '' ? initialBoard() : convertFromFEN(fenPos);
+
 /* Scrolls to bottom of move-history div */
 function scrollToBottomHist() {
     const scrollingElement = document.querySelector('.move-history');
@@ -84,7 +93,7 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            history: [initialBoard()],
+            history: [startingBoard],
             // history: [stalemateBoard()],
             gameOver: false, gameStatus: '',
             moves: [],
