@@ -4,12 +4,16 @@
 
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+img {
+    width: 38px;
 }
 
 .board {
-    width: 480px;
-    height: 480px;
+    width: 304px;
+    height: 304px;
     border: 1px solid black;
     margin-right: 20px;
 }
@@ -37,14 +41,14 @@
 }
 
 .square {
-    width: 60px;
-    height: 60px;
+    width: 38px;
+    height: 38px;
 }
 
 /* Change to piece-clicked */
 .piece-clicked {
-    width: 60px;
-    height: 60px;
+    width: 38px;
+    height: 38px;
     background-color: green;
 }
 

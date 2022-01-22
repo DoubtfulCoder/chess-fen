@@ -8,11 +8,13 @@ import { Knight, Bishop, Rook, Queen } from './piece.js';
 const url = window.location.href; 
 console.log(url);
 const fenPos = url.substring(url.indexOf("?")+1);
-console.log(fenPos);
 
 console.log(convertFromFEN(fenPos));
 
-const startingBoard = fenPos === '' ? initialBoard() : convertFromFEN(fenPos);
+const startingBoard = url.indexOf("?") === -1 ? 
+    initialBoard() : convertFromFEN(fenPos);
+
+console.log('fen' + fenPos);
 
 /* Scrolls to bottom of move-history div */
 function scrollToBottomHist() {
